@@ -3,8 +3,13 @@ import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Gracias from "./pages/gracias/Gracias";
+import { useEffect } from "react";
+import AOS from "aos";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <BrowserRouter>
@@ -14,6 +19,7 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="gracias" element={<Gracias />} />
       </Routes>
+      
     </BrowserRouter>
 
   )

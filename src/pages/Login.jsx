@@ -52,7 +52,7 @@ const Login = () => {
                     <input className="btn" type="submit" value="Enviar" ></input>
                 </form>
 
-                <NavLink to="/registro" className="enlace">Si no tienes cuenta, puedes registrarte aquí</NavLink>
+                <NavLink to="/register" className="enlace">Si no tienes cuenta, puedes registrarte aquí</NavLink>
             </main>
 
         </>
