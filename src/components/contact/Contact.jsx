@@ -1,12 +1,8 @@
 import './Contact.css';
-import prototipo from '../../assets/prototipo-celular.png';
 
 const Contact = () => {
     return (
         <section className="contacto" id="contacto">
-            <div className="contacto__image">
-                <img src={prototipo} alt="Prototipo de la app Vibe" />
-            </div>
             <div className="contacto__form">
                 <h2 className="contact__title">¿Tienes preguntas? Escríbenos</h2>
                 <form 
