@@ -1,0 +1,45 @@
+.gracias {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6C0063;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.gracias__box {
+    background-color: #b0005c;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-width: 500px;
+    width: 100%;
+}
+
+.gracias__box h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-family: "Orbitron", sans-serif;;
+}
+
+.gracias__box p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.gracias__box .btn {
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 25px;
+    background-color: #b0005c;
+    border-radius: 30px;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.gracias__box .btn:hover {
+    background-color: #FFAEC9;
+    color: #000000;
+}
