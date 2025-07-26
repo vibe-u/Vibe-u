@@ -13,7 +13,7 @@ const Login = () => {
         const{email,password}= data
         try {
             await signInWithEmailAndPassword(authFirebase,email,password)
-            navigate('/dashboard')
+            navigate('/gracias')
         } catch (error) {
             console.log(error);
             alert(error.message)

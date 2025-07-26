@@ -3,6 +3,7 @@ import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Gracias from "./pages/gracias/Gracias";
+import Perfil from "./pages/perfil/Perfil";
 import { useEffect } from "react";
 import AOS from "aos";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="gracias" element={<Gracias />} />
+        <Route path="perfil" element={<Perfil />} />
       </Routes>
       
     </BrowserRouter>
