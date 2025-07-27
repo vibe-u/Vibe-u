@@ -107,7 +107,7 @@
     display: inline-block;
     margin: 10px;
     padding: 14px 28px;
-    background-color: #D6006D;
+    background-color: #b0005c;
     color: rgb(235, 223, 223);
     border: none;
     border-radius: 28px;
@@ -137,12 +137,12 @@
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid white;
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .btn-secondary:hover {
-    background-color: white;
-    color: var(--colorUno);
+    background-color: rgb(255, 255, 255);
+    color: #6C0063;
     transform: translateY(-2px);
 }
 

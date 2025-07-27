@@ -1,13 +1,16 @@
 import { authFirebase } from '../../firebase';
 import { useForm } from "react-hook-form";
 import { dbFirebase } from "../../firebase";
-import { addDoc, collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import { addDoc, collection, updateDoc, deleteDoc, doc, getDocs } from "firebase/firestore";
+import { useEffect, useState } from 'react';
+
 import './Perfil.css';
 
 const Perfil = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [perfiles, setPerfiles] = useState([]);
+    const [id, setId] = useState("")
+
 
     const handleLogout = async () => {
         try {
@@ -18,39 +21,76 @@ const Perfil = () => {
         }
     };
 
-    const handleCreate = async (data) => {
+        const handleCreate = async (data) => {
         try {
-            await addDoc(collection(dbFirebase, "perfiles"), data);
-            reset();
-            fetchPerfiles(); // recarga la lista después de crear uno nuevo
+            if (id) {
+                await updateDoc(doc(dbFirebase, "perfiles", id), data)
+                setId("")
+                reset({
+                    nombre: '',
+                    foto: '',
+                    bio: ''
+                })
+            }
+            else {
+                await addDoc(collection(dbFirebase, "perfiles"), data)
+                reset()
+            }
+            handleGet()
         } catch (error) {
             console.log(error);
         }
-    };
-
-    const fetchPerfiles = async () => {
-        try {
-            const querySnapshot = await getDocs(collection(dbFirebase, "perfiles"));
-            const data = querySnapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setPerfiles(data);
-        } catch (error) {
-            console.log("Error al obtener perfiles:", error);
-        }
-    };
+    }
 
     useEffect(() => {
-        fetchPerfiles();
-    }, []);
+        handleGet()
+    }, [])
+
+    const handleGet = async () => {
+        const snapshot = await getDocs(collection(dbFirebase, "perfiles"));
+        const documentos = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
+        setPerfiles(documentos)
+    }
+    const handleDelete = async (id) => {
+        const confirmar = confirm("Vas a eliminar, ¿Estás seguro?")
+        if (confirmar){
+            const userDoc = doc(dbFirebase, "perfiles", id)
+            await deleteDoc(userDoc)
+            handleGet()
+        }
+    }
+    const handleEdit = (perfiles) => {
+        setId(perfiles.id)
+        reset({
+            nombre: perfiles.nombre,
+            foto: perfiles.foto,
+            bio: perfiles.bio
+        })
+    }
+    const [cambio, setCambio] = useState(false);
+    const cambiarColor = () => {
+        if (cambio) {
+            document.documentElement.style.filter = 'none';
+        } else {
+            document.documentElement.style.filter = 'invert(1)';
+        }
+        setCambio(!cambio);
+    };
+    
+
+    useEffect(() => {
+        handleGet()
+    }, [])
+
 
     return (
         <main>
             <section className="header_projects">
-                <p>Bienvenido - </p>
+                <p>Bienvenido - {perfiles.nombre}</p>
                 <div className="header-actions">
-                    <button className="theme-toggle">🌙</button>
+                    <button className="theme-toggle" onClick={cambiarColor}>
+                    {cambio ? '☀️' : '🌙'}
+                    </button>
                     <button className="logout-btn" onClick={handleLogout}>Salir</button>
                 </div>
             </section>
@@ -101,8 +141,11 @@ const Perfil = () => {
                                     <img src={perfil.foto} alt={perfil.nombre} className="foto-perfil" />
                                     <h4>{perfil.nombre}</h4>
                                     <p>{perfil.bio}</p>
+                                    <div className="route-actions">
+                                        <button className="update-btn" onClick={() => handleEdit(perfil)}>Actualizar</button>
+                                        <button className="delete-btn" onClick={() => handleDelete(perfil.id)}>Eliminar</button>
+                                    </div>
                                 </div>
-
                             ))
                         )}
                     </div>

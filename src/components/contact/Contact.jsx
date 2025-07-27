@@ -2,8 +2,8 @@ import './Contact.css';
 
 const Contact = () => {
     return (
-        <section className="contacto" id="contacto">
-            <div className="contacto__form">
+        <section className="contact" id="contact">
+            <div className="contact__form">
                 <h2 className="contact__title">¿Tienes preguntas? Escríbenos</h2>
                 <form 
                     action="https://formsubmit.co/kyaramaltamirano@gmail.com" 

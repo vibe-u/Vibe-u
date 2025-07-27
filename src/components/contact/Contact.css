@@ -1,15 +1,15 @@
-.contacto {
+.contact {
   padding: 4rem 2rem;
   background-color: #7701773f;
   text-align: center;
 }
 
-.contacto h2 {
+.contact h2 {
   color: #FF0080;
   margin-bottom: 1rem;
 }
 
-.contacto form {
+.contact form {
   max-width: 500px;
   margin: 0 auto;
   display: flex;
@@ -17,15 +17,15 @@
   gap: 1rem;
 }
 
-.contacto input,
-.contacto textarea {
+.contact input,
+.contact textarea {
     padding: 0.75rem;
     border: 1px solid #1111119c;
     border-radius: 8px;
     font-size: 1rem;
 }
 
-.contacto button {
+.contact button {
     background-color: #caabf850;
     color: white;
     border: none;

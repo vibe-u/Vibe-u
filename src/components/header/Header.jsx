@@ -21,16 +21,16 @@ const Header = () => {
                 </Link>
             </div>
             <nav className="nav-links">
-                <Link to="/#que-es-vibe-u">¿Qué es Vibe-U?</Link>
-                <Link to="/#como-funciona">Cómo Funciona</Link>
-                <Link to="/#explora-conecta">Explora y Conecta</Link>
-                <Link to="/#contacto">Contacto</Link>
+                <a href="#que-es-vibe-u">¿Qué es Vibe-U?</a>
+                <a href="#como-funciona">Cómo Funciona</a>
+                <a href="#explora-conecta">Explora y Conecta</a>
+                <Link to="/contacto">Contacto</Link>
             </nav>
             <button className="auth-button" onClick={handleLoginClick}>
                 Iniciar Sesión / Registrarse
             </button>
             <div className="header-cta-buttons">
-                <a href="#descarga" className="btn btn-primary">Descarga la App</a>
+                <a href="https://play.google.com/store/games?hl=es_EC" className="btn btn-primary">Descarga la App</a>
             </div>
             {/* Hero Text Section */}
             <div className="hero-text">

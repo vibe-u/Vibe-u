@@ -6,6 +6,7 @@ import Footer from "../components/footer/Footer"
 import Header from "../components/header/Header"
 import HowItWorks from "../components/how/HowItWorks"
 import ProblemSolution from "../components/problemSolution/ProblemSolution"
+import Descarga from "../components/descarga/Descarga"
 
 
 const Landing = () => {
@@ -20,6 +21,7 @@ const Landing = () => {
             <HowItWorks />
             <ExploraConecta />
             <Contact />
+            <Descarga />
             <Footer />
         </>
     )
