@@ -19,27 +19,28 @@ const Header = () => {
                 <Link to="/">
                     <img src={logo} alt="Vibe-U Logo" className="logo" />
                 </Link>
-            </div>
+                <div className="boton-descarga1">
+                    <a href="https://apps.apple.com/app/apple-store/id6444221234?pt=123456789&ct=website&mt=8" className="btn btn-primary descarga-chica">Descarga la App</a>
+                </div>
+            </div>  
             <nav className="nav-links">
                 <a href="#que-es-vibe-u">¿Qué es Vibe-U?</a>
                 <a href="#como-funciona">Cómo Funciona</a>
                 <a href="#explora-conecta">Explora y Conecta</a>
                 <Link to="/contacto">Contacto</Link>
+                <Link to="/beneficios">Beneficios</Link>
+                <Link to="/eventos">Eventos</Link>
             </nav>
-            <button className="auth-button" onClick={handleLoginClick}>
+            <button className="button__auth-button" onClick={handleLoginClick}>
                 Iniciar Sesión / Registrarse
             </button>
-            <div className="header-cta-buttons">
-                <a href="https://play.google.com/store/games?hl=es_EC" className="btn btn-primary">Descarga la App</a>
-            </div>
-            {/* Hero Text Section */}
             <div className="hero-text">
                 <p>La app que pone a la U en modo social</p>
-                <div className="btn-container">
+                <div className="boton-descarga">
                     <a href="#" className="btn" onClick={() => handleJoinNowClick()}>
                         Únete ahora
                     </a>
-                    <a href="#como-funciona" className="btn btn-secondary">Cómo funciona</a>
+                    <a href="#como-funciona" className="btn-secondary">Cómo funciona</a>
                 </div>
             </div>
         </header>
