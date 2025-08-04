@@ -23,8 +23,6 @@ const Contact = () => {
                 <label className="checkbox__label">
                     <input type="checkbox" required /> Acepto términos y condiciones
                 </label>
-
-                <input type="hidden" name="_next" value="http://localhost:5173/gracias" />
                 <button type="submit" className="btn button">Enviar</button>
                 </form>
             </div>
