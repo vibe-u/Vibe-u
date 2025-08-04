@@ -1,4 +1,5 @@
 import './Contact.css';
+import PrototipoCelular from '../../assets/prototipo-celular.png';
 
 const Contact = () => {
     return (
@@ -6,7 +7,7 @@ const Contact = () => {
             <h2 className="contact__title">¿Tienes preguntas? Escríbenos</h2>
             <div className="contact__form-container">
                 <div className="contact__img">
-                    <img src="src/assets/prototipo-celular.png" alt="Imagen de contacto" />
+                    <img src={PrototipoCelular} alt="Imagen de contacto" />
                 </div>
 
                 <form
