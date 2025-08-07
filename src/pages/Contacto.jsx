@@ -1,6 +1,6 @@
 const Contacto = () => {
     return (
-        <><h1>Admin Contacto</h1><p>Integrantes del grupo:</p><ul>
+        <>Admin Contacto<p>Integrantes del grupo:</p><ul>
             <li>Melany Perugachi</li>
             <li>Santiago Vargas</li>
             <li>Sebastian Hidalgo</li>

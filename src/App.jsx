@@ -6,6 +6,7 @@ import Gracias from "./pages/gracias/Gracias";
 import Perfil from "./pages/perfil/Perfil";
 import Contacto from "./pages/Contacto";
 import { useEffect } from "react";
+import Eventos from "./pages/eventos/Eventos";
 import AOS from "aos";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="gracias" element={<Gracias />} />
         <Route path="perfil" element={<Perfil />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="eventos" element={<Eventos />} />
 
       </Routes>
       
