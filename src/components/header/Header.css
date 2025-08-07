@@ -36,7 +36,6 @@
     margin-left: 50px;
 }
 
-
 .nav-links {
     display: flex;
     justify-content: center;
@@ -171,7 +170,8 @@
     padding: 8px 20px;
     border-radius: 8px;
 }
-.button__auth-button{
+
+.button__auth-button {
     background-color: rgba(255, 255, 255, 0.123);
     color: rgb(241, 247, 239);
     border-radius: 8px;
@@ -184,17 +184,48 @@
     display: block;
 }
 
+/* --- Media Queries para Responsividad --- */
+@media (max-width: 768px) {
+    .header {
+        min-height: 80vh; /* Ajusta la altura en móviles */
+    }
 
-@media (width <= 768px) {
+    .logo-container {
+        margin-left: 15px; /* Reduce márgenes en móviles */
+        margin-top: 20px;
+        align-items: center; /* Centra el logo en móviles */
+    }
+
     .nav-links {
         flex-direction: column;
         align-items: center;
         gap: 10px;
+        margin-top: 0; /* Evita margen negativo */
+    }
+
+    .nav-links a {
+        font-size: 1em; /* Ajusta el tamaño de la fuente */
+    }
+
+    .hero-text {
+        padding-bottom: 60px; /* Ajusta el padding */
+    }
+
+    .hero-text p {
+        font-size: 1.8rem; /* Reduce tamaño del texto en móviles */
+    }
+
+    .btn {
+        padding: 10px 30px; /* Ajusta el tamaño de los botones */
+    }
+
+    .btn-secondary {
+        padding: 10px 30px; /* Ajusta el tamaño de los botones */
     }
 
     .button__auth-button {
         width: auto;
-        padding: 12px 24px;
-        margin-top: 10px;
+        padding: 10px 20px; /* Ajusta el padding */
     }
 }
+
