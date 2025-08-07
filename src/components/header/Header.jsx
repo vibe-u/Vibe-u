@@ -41,7 +41,7 @@ const Header = () => {
                     <a href="#" className="btn" onClick={handleJoinNowClick}>
                         Únete ahora
                     </a>
-                    <Link to="#como-funciona" className="btn-secondary">Cómo funciona</Link>
+                    <a href="#como-funciona" className="btn-secondary">Cómo funciona</a>
                 </div>
             </div>
         </header>
