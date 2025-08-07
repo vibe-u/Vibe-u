@@ -1,4 +1,10 @@
 import React from 'react';
+import integrante2 from '../../assets/integrante2.jpg';
+import integrante1 from '../../assets/integrante1.jpg';
+import integrante3 from '../../assets/integrante3.jpg';
+import Grupo from '../../assets/grupo-amigos.png';
+import './Contacto.css';
+
 
 const Contacto = () => {
     // Datos de los miembros del equipo
@@ -20,18 +26,18 @@ const Contacto = () => {
         },
         {
             name: 'Emilio Gavilánez',
-            bio: 'Científico de datos que trabaja en los algoritmos de coincidencia de Vibe-U.',
-            photo: 'https://via.placeholder.com/150/FFFF00/000000?text=EG'
+            bio: 'Desarrollador en los algoritmos para conectar a estudiantes con personas y grupos compatibles en Vibe-U.',
+            photo: integrante2
         },
         {
             name: 'Jhonathan Ruiz',
-            bio: 'Ingeniero de control de calidad, garantiza que la aplicación esté libre de errores.',
-            photo: 'https://via.placeholder.com/150/008000/FFFFFF?text=JR'
+            bio: 'Experto en control de calidad que se encarga de probar la plataforma, garantiza que la aplicación esté libre de errores.',
+            photo: integrante1
         },
         {
             name: 'Kyara Altamirano',
             bio: 'Creadora de contenido y estratega de marketing para la comunidad Vibe-U.',
-            photo: 'https://via.placeholder.com/150/FFC0CB/000000?text=KA'
+            photo: integrante3
         },
     ];
 
@@ -40,10 +46,9 @@ const Contacto = () => {
             <h2 className="contacto-title">Conoce al Equipo detrás de Vibe-U 🤝</h2>
             <p className="subtitulo">Somos un grupo de universitarios apasionados por crear conexiones auténticas.</p>
             
-            {/* Espacio para la imagen grupal */}
             <div className="imagen-grupal-container">
                 <img 
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKEyE0OxW82j8ZUiRQN2_FLSxjqVoXv7zgug&s" 
+                    src={Grupo} 
                     alt="Foto grupal del equipo Vibe-U" 
                     className="imagen-grupal" 
                 />
