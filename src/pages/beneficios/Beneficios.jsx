@@ -1,8 +1,13 @@
 import React from 'react';
 import './Beneficios.css';
+import { useNavigate } from 'react-router';
 import {AOS} from 'aos';
 
 const Beneficios = () => {
+    const navigate = useNavigate();
+    const handleJoinNowClick = () => {
+        navigate("/register");
+    };
     return (
         <section className="beneficios-section">
             <h2 className="beneficios-title">Beneficios de Unirte a Vibe-U 🎓</h2>
@@ -45,7 +50,7 @@ const Beneficios = () => {
                     </div>
                 </div>
                 <div className="join-btn-container">
-                    <button className="join-now-btn">¡Unirse Ahora!</button>
+                    <button className="join-now-btn" onClick={handleJoinNowClick}>¡Unirse Ahora!</button>
                 </div>
             </section>
         </section>);
