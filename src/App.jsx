@@ -1,18 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router";
 import Landing from "./pages/Landing";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
+import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
 import Gracias from "./pages/gracias/Gracias";
 import Perfil from "./pages/perfil/Perfil";
-import Contacto from "./pages/Contacto";
+import Contacto from "./pages/contacto/Contacto";
 import { useEffect } from "react";
 import Eventos from "./pages/eventos/Eventos";
+import Beneficios from "./pages/beneficios/Beneficios";
+import Dashboard from "./pages/dashboard/Dashboard";
 import AOS from "aos";
+import 'aos/dist/aos.css';
 
 function App() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+useEffect(() => {
+  AOS.init({ once: true });
+}, []);
 
   return (
     <BrowserRouter>
@@ -24,7 +27,8 @@ function App() {
         <Route path="perfil" element={<Perfil />} />
         <Route path="contacto" element={<Contacto />} />
         <Route path="eventos" element={<Eventos />} />
-
+        <Route path="beneficios" element={<Beneficios />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
       
     </BrowserRouter>

@@ -3,14 +3,23 @@ import { useForm } from "react-hook-form";
 import { dbFirebase } from "../../firebase";
 import { addDoc, collection, updateDoc, deleteDoc, doc, getDocs } from "firebase/firestore";
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 import './Perfil.css';
 
 const Perfil = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [perfiles, setPerfiles] = useState([]);
-    const [id, setId] = useState("")
+    const [id, setId] = useState("");
+    const [usuarioCorreo, setUsuarioCorreo] = useState("");
 
+    useEffect(() => {
+        const usuario = authFirebase.currentUser;
+        if (usuario) {
+            setUsuarioCorreo(usuario.email || "Correo no disponible");
+        }
+    }, []);
 
     const handleLogout = async () => {
         try {
@@ -21,52 +30,53 @@ const Perfil = () => {
         }
     };
 
-        const handleCreate = async (data) => {
+    const handleCreate = async (data) => {
         try {
             if (id) {
-                await updateDoc(doc(dbFirebase, "perfiles", id), data)
-                setId("")
-                reset({
-                    nombre: '',
-                    foto: '',
-                    bio: ''
-                })
+                await updateDoc(doc(dbFirebase, "perfiles", id), data);
+                setId("");
+                reset({ nombre: '', foto: '', bio: '' });
+                toast.success("Maqueta modificada correctamente");
+            } else {
+                await addDoc(collection(dbFirebase, "perfiles"), data);
+                reset();
+                toast.success("Maqueta creada correctamente");
             }
-            else {
-                await addDoc(collection(dbFirebase, "perfiles"), data)
-                reset()
-            }
-            handleGet()
+            handleGet();
         } catch (error) {
-            console.log(error);
+            toast.error(error);
         }
-    }
+    };
 
     useEffect(() => {
-        handleGet()
-    }, [])
+        handleGet();
+    }, []);
 
     const handleGet = async () => {
         const snapshot = await getDocs(collection(dbFirebase, "perfiles"));
-        const documentos = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-        setPerfiles(documentos)
-    }
+        const documentos = snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+        setPerfiles(documentos);
+    };
+
     const handleDelete = async (id) => {
-        const confirmar = confirm("Vas a eliminar, ¿Estás seguro?")
-        if (confirmar){
-            const userDoc = doc(dbFirebase, "perfiles", id)
-            await deleteDoc(userDoc)
-            handleGet()
+        const confirmar = confirm("Vas a eliminar, ¿Estás seguro?");
+        if (confirmar) {
+            const userDoc = doc(dbFirebase, "perfiles", id);
+            await deleteDoc(userDoc);
+            handleGet();
+            toast.success("Maqueta eliminada correctamente");
         }
-    }
-    const handleEdit = (perfiles) => {
-        setId(perfiles.id)
+    };
+
+    const handleEdit = (perfil) => {
+        setId(perfil.id);
         reset({
-            nombre: perfiles.nombre,
-            foto: perfiles.foto,
-            bio: perfiles.bio
-        })
-    }
+            nombre: perfil.nombre,
+            bio: perfil.bio
+        });
+        toast.success("Maqueta editada correctamente");
+    };
+
     const [cambio, setCambio] = useState(false);
     const cambiarColor = () => {
         if (cambio) {
@@ -76,61 +86,63 @@ const Perfil = () => {
         }
         setCambio(!cambio);
     };
-    
-
-    useEffect(() => {
-        handleGet()
-    }, [])
-
 
     return (
-        <main>
-            <section className="header_projects">
-                <p>Bienvenido - {perfiles.nombre}</p>
+        <main className="perfil-main">
+            <section className="perfil-header">
+                <p>Bienvenido - {usuarioCorreo}</p>
                 <div className="header-actions">
                     <button className="theme-toggle" onClick={cambiarColor}>
-                    {cambio ? '☀️' : '🌙'}
+                        {cambio ? '☀️' : '🌙'}
                     </button>
                     <button className="logout-btn" onClick={handleLogout}>Salir</button>
                 </div>
             </section>
 
-            <section className="container_projects">
-                <section className="form-section">
-                    <h4>Unirse a Vibe-u</h4>
-                    <p>Completa tu perfil para unirte a la comunidad</p>
+            <h1 className="main-title">Gestionar Perfiles de Usuarios</h1>
+            <div className="perfil-content">
+                <section className="perfil-form-section">
+                    <div className="form-header">
+                        <h4>¡Únete a Vibe-u!</h4>
+                        <p>Completa tu perfil para ser parte de la comunidad</p>
+                    </div>
 
-                    <form className="route-form" onSubmit={handleSubmit(handleCreate)}>
+                    <form className="perfil-form" onSubmit={handleSubmit(handleCreate)}>
+                        <div className="input-group">
+                            <label>Nombre completo:</label>
+                            <input type="text" placeholder="Ej: María López"
+                                {...register("nombre", { required: true })} />
+                            {errors.nombre && <span className="error-text">El nombre es requerido</span>}
+                        </div>
 
-                        <label>Nombre completo:</label>
-                        <input type="text" placeholder="Ej: María López"
-                            {...register("nombre", { required: true })}
-                        />
-                        {errors.nombre && <span className="errors">El nombre es requerido</span>}
+                        {!id && (
+                            <div className="input-group">
+                                <label>Correo:</label>
+                                <input type="email" placeholder="ejemplo@correo.com"
+                                    {...register("correo", { required: true })} />
+                                {errors.correo && <span className="error-text">El correo es requerido</span>}
+                            </div>
+                        )}
 
-                        <label>Correo:</label>
-                        <input type="email" placeholder="ejemplo@correo.com"
-                            {...register("correo", { required: true })}
-                        />
-                        {errors.correo && <span className="errors">El correo es requerido</span>}
+                        <div className="input-group">
+                            <label>Foto de perfil (URL):</label>
+                            <input type="url" placeholder="URL de tu foto"
+                                {...register("foto", { required: true })} />
+                            {errors.foto && <span className="error-text">La imagen es requerida</span>}
+                        </div>
 
-                        <label>Foto de perfil (URL):</label>
-                        <input type="url" placeholder="URL de tu foto"
-                            {...register("foto", { required: true })}
-                        />
-                        {errors.foto && <span className="errors">La imagen es requerida</span>}
+                        <div className="input-group">
+                            <label>Biografía:</label>
+                            <textarea placeholder="Cuéntanos de ti"
+                                {...register("bio", { required: true })}></textarea>
+                            {errors.bio && <span className="error-text">La bio es requerida</span>}
+                        </div>
 
-                        <label>Biografía:</label>
-                        <textarea placeholder="Cuéntanos de ti"
-                            {...register("bio", { required: true })}
-                        />
-                        {errors.bio && <span className="errors">La bio es requerida</span>}
-
-                        <input className="btn" type="submit" value="Unirse" />
+                        <button type="submit" className="submit-btn">Unirse</button>
                     </form>
                 </section>
 
-                <section className="routes-section">
+                <section className="perfiles-registrados-section">
                     <h4>Perfiles registrados</h4>
                     <div className="usuarios-list">
                         {perfiles.length === 0 ? (
@@ -150,7 +162,7 @@ const Perfil = () => {
                         )}
                     </div>
                 </section>
-            </section>
+            </div>
         </main>
     );
 };

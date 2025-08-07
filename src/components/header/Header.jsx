@@ -20,7 +20,7 @@ const Header = () => {
                     <img src={logo} alt="Vibe-U Logo" className="logo" />
                 </Link>
                 <div className="boton-descarga1">
-                    <a href="https://apps.apple.com/app/apple-store/id6444221234?pt=123456789&ct=website&mt=8" className="btn btn-primary descarga-chica">Descarga la App</a>
+                    <a href="https://play.google.com/store/games?hl=es_EC" className="btn btn-primary descarga-chica">Descarga la App</a>
                 </div>
             </div>  
             <nav className="nav-links">

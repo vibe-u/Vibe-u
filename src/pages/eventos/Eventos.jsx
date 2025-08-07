@@ -27,19 +27,25 @@ const eventosData = [
 ];
 
 const Eventos = () => {
+    // Duplicamos los datos para un scroll infinito sin saltos
+    const sliderData = [...eventosData, ...eventosData];
+
     return (
-        <div className="slider-container">
-            <h2 className="slider-title">Descubre lo mejor de tu universidad</h2>
-            <div className="slider">
-                {eventosData.map((item, index) => (
-                    <div className="slide-card" key={index}>
-                        <img src={item.image} alt={item.title} className="slide-image" />
-                        <h3 className="slide-title">{item.title}</h3>
-                        <p className="slide-description">{item.description}</p>
-                    </div>
-                ))}
+        <section className="eventos-section">
+            <h2 className="slider-title">Descubre lo mejor de tu vida universitaria</h2>
+            <p className="slider-subtitle">Vibe-U te mantiene al tanto de todo lo que sucede en tu campus. ¡Desplázate para ver!</p>
+            <div className="slider-container">
+                <div className="slider-inner">
+                    {sliderData.map((item, index) => (
+                        <div className="slide-card" key={index}>
+                            <img src={item.image} alt={item.title} className="slide-image" />
+                            <h3 className="slide-card-title">{item.title}</h3>
+                            <p className="slide-description">{item.description}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 
