@@ -25,9 +25,9 @@ const Header = () => {
                 </div>
             </div>  
             <nav className="nav-links">
-                <Link to="#que-es-vibe-u">¿Qué es Vibe-U?</Link>
-                <Link to="#como-funciona">Cómo Funciona</Link>
-                <Link to="#explora-conecta">Explora y Conecta</Link>
+                <a href="#que-es-vibe-u">¿Qué es Vibe-U?</a>
+                <a href="#como-funciona">Cómo Funciona</a>
+                <a href="#explora-conecta">Explora y Conecta</a>
                 <Link to="/contacto">Contacto</Link>
                 <Link to="/beneficios">Beneficios</Link>
                 <Link to="/eventos">Eventos</Link>
