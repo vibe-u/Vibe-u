@@ -6,9 +6,8 @@ import integrante4 from '../../assets/integrante4.jpg';
 import integrante5 from '../../assets/integrante5.jpg';
 import integrante6 from '../../assets/integrante6.jpg';
 
-import Grupo from '../../assets/unnamed.png';
+import Grupo from '../../assets/unnamed.webp';
 import './Contacto.css';
-
 
 const Contacto = () => {
     const teamMembers = [
@@ -48,19 +47,33 @@ const Contacto = () => {
         <section id="contacto" className="contacto-section">
             <h2 className="contacto-title">Conoce al Equipo detrás de Vibe-U 🤝</h2>
             <p className="subtitulo">Somos un grupo de universitarios apasionados por crear conexiones auténticas.</p>
-            
+
             <div className="imagen-grupal-container">
-                <img 
-                    src={Grupo} 
-                    alt="Foto grupal del equipo Vibe-U" 
-                    className="imagen-grupal" 
-                />
+                {/* Imagen grupal con carga diferida y formato WebP */}
+                <picture>
+                    <source srcSet={Grupo} type="image/webp" />
+                    <img
+                        src={Grupo} // fallback a JPG
+                        alt="Foto grupal del equipo Vibe-U"
+                        className="imagen-grupal"
+                        loading="lazy"
+                    />
+                </picture>
             </div>
 
             <div className="equipo-container">
                 {teamMembers.map((member, index) => (
                     <div key={index} className="miembro-card">
-                        <img src={member.photo} alt={member.name} className="miembro-foto" />
+                        <picture>
+                            {/* Usamos el formato WebP para imágenes modernas, y JPG como fallback */}
+                            <source srcSet={member.photo} type="image/webp" />
+                            <img
+                                src={member.photo} // fallback a JPG
+                                alt={member.name}
+                                className="miembro-foto"
+                                loading="lazy" // Lazy loading para cada foto de miembro
+                            />
+                        </picture>
                         <h3>{member.name}</h3>
                         <p>{member.bio}</p>
                     </div>

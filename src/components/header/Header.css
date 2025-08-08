@@ -1,6 +1,6 @@
 /* --- HEADER PRINCIPAL --- */
 .header {
-    background: url('../../assets/estudiantes_felices.jpg') no-repeat center center/cover;
+    background: url('../../assets/estudiantes_felices.webp') no-repeat center center/cover;
     background-attachment: fixed;
     min-height: 95vh;
     display: flex;

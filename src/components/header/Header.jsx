@@ -1,6 +1,6 @@
 import './Header.css';
 import { Link } from "react-router"; 
-import logo from '../../assets/logo-vibe-u.png';
+import logo from '../../assets/logo-vibe-u.webp';
 import { useNavigate } from "react-router"; 
 
 const Header = () => {

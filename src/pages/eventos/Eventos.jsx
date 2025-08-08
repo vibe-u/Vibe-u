@@ -38,7 +38,7 @@ const Eventos = () => {
                 <div className="slider-inner">
                     {sliderData.map((item, index) => (
                         <div className="slide-card" key={index}>
-                            <img src={item.image} alt={item.title} className="slide-image" />
+                            <img src={item.image} alt={item.title} className="slide-image" loading="lazy"/>
                             <h3 className="slide-card-title">{item.title}</h3>
                             <p className="slide-description">{item.description}</p>
                         </div>
