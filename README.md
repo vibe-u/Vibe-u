@@ -1,12 +1,23 @@
-# React + Vite
+# Vibe-U 🎓✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*La app que pone a la U en modo social*  
+Vibe-U es una plataforma interactiva desarrollada en *React* y desplegada en *Firebase Hosting*, pensada para que estudiantes y miembros de la comunidad universitaria se mantengan conectados, informados y participativos.
 
-Currently, two official plugins are available:
+🔗 *Versión en producción:* [https://vibe-u.web.app/](https://vibe-u.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Características
+- 📝 *Registro de usuarios* y CRUD completo del perfil.
+- 📅 *Visualización de eventos* de la universidad.
+- 🎁 *Sección de beneficios* para la comunidad.
+- 👥 *Acerca de nosotros* con información del equipo.
+- ⚡ Rápida, ligera y optimizada gracias a *Vite*.
+- 📱 Totalmente *responsiva* y accesible desde cualquier dispositivo.
+- 
+# 🛠 Tecnologías utilizadas
+- [React](https://react.dev/) – Framework de UI
+- [Vite](https://vitejs.dev/) – Empaquetador rápido
+- [Firebase Hosting](https://firebase.google.com/docs/hosting) – Despliegue y hosting
 
-## Expanding the ESLint configuration
+# Pre-visualización del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img width="1838" height="863" alt="image" src="https://github.com/user-attachments/assets/2779d2ce-9db6-4263-9d34-45cfb5481392" />
