@@ -15,13 +15,27 @@ const Landing = () => {
             <div data-aos="fade-down">
                 <Header />
             </div>
-            <About />
-            <ProblemSolution />
-            <Beneficios />
-            <HowItWorks />
-            <ExploraConecta />
-            <Contact />
-            <Descarga />
+            <div data-aos="zoom-in" data-aos-duration="1500">
+                <About />
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1500">
+                <ProblemSolution />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="1500">
+                <Beneficios />
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1000">
+                <HowItWorks />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="1500">
+                <ExploraConecta />
+            </div>
+            <div data-aos="zoom-in" data-aos-duration="1500">
+                <Contact />
+            </div>
+            <div data-aos="fade-down" data-aos-duration="1000">
+                <Descarga />
+            </div>
             <Footer />
         </>
     )

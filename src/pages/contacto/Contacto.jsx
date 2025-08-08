@@ -2,27 +2,30 @@ import React from 'react';
 import integrante2 from '../../assets/integrante2.jpg';
 import integrante1 from '../../assets/integrante1.jpg';
 import integrante3 from '../../assets/integrante3.jpg';
-import Grupo from '../../assets/grupo-amigos.png';
+import integrante4 from '../../assets/integrante4.jpg';
+import integrante5 from '../../assets/integrante5.jpg';
+import integrante6 from '../../assets/integrante6.jpg';
+
+import Grupo from '../../assets/unnamed.png';
 import './Contacto.css';
 
 
 const Contacto = () => {
-    // Datos de los miembros del equipo
     const teamMembers = [
         {
             name: 'Melany Perugachi',
             bio: 'Especialista en front-end, responsable del diseño de la interfaz y la experiencia de usuario.',
-            photo: 'https://via.placeholder.com/150/0000FF/FFFFFF?text=MP' // URL de ejemplo, puedes usar fotos reales
+            photo: integrante4
         },
         {
             name: 'Santiago Vargas',
             bio: 'Desarrollador back-end, encargado de la lógica del servidor y la gestión de la base de datos.',
-            photo: 'https://via.placeholder.com/150/808080/FFFFFF?text=SV'
+            photo: integrante5
         },
         {
             name: 'Sebastian Hidalgo',
             bio: 'Experto en la arquitectura de la aplicación, asegurando un rendimiento óptimo.',
-            photo: 'https://via.placeholder.com/150/FF0000/FFFFFF?text=SH'
+            photo: integrante6
         },
         {
             name: 'Emilio Gavilánez',
@@ -31,7 +34,7 @@ const Contacto = () => {
         },
         {
             name: 'Jhonathan Ruiz',
-            bio: 'Experto en control de calidad que se encarga de probar la plataforma, garantiza que la aplicación esté libre de errores.',
+            bio: 'Experto en control de calidad, garantiza que la aplicación esté libre de errores.',
             photo: integrante1
         },
         {

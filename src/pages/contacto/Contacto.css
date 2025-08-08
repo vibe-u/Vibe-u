@@ -23,8 +23,8 @@
 /* Contenedor de la imagen grupal */
 .imagen-grupal-container {
     width: 100%;
-    max-width: 800px; /* Tamaño máximo para la imagen */
-    margin: 0 auto 50px auto; /* Centrar y añadir espacio abajo */
+    max-width: 800px; 
+    margin: 0 auto 50px auto; 
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -33,11 +33,11 @@
 
 .imagen-grupal {
     width: 100%;
-    height: auto;
+    height: 700px;
     display: block;
 }
 
-/* Contenedor de la cuadrícula de miembros del equipo */
+/* Contenedor de miembros del equipo */
 .equipo-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -55,7 +55,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efecto al pasar el mouse */
 .miembro-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.15);
@@ -87,7 +86,7 @@
     line-height: 1.5;
 }
 
-/* Estilos de la información de contacto */
+/* Información de contacto */
 .contacto-info {
     margin-top: 60px;
     background-color: white;
@@ -159,7 +158,6 @@
     }
 }
 
-/* Responsividad para móviles */
 @media (max-width: 768px) {
     .contacto-title {
         font-size: 2em;
@@ -168,7 +166,7 @@
         font-size: 1em;
     }
     .equipo-container {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-columns: 1fr; 
     }
     .contacto-info {
         padding: 30px;

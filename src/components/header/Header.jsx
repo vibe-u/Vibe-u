@@ -35,7 +35,7 @@ const Header = () => {
             <button className="button__auth-button" onClick={handleLoginClick}>
                 Iniciar Sesión / Registrarse
             </button>
-            <div className="hero-text">
+            <div className="hero-text" data-aos="fade-down" data-aos-duration="1500">
                 <p>La app que pone a la U en modo social</p>
                 <div className="boton-descarga">
                     <a href="#" className="btn" onClick={handleJoinNowClick}>

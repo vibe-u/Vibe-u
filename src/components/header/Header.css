@@ -184,48 +184,43 @@
     display: block;
 }
 
-/* --- Media Queries para Responsividad --- */
 @media (max-width: 768px) {
     .header {
-        min-height: 80vh; /* Ajusta la altura en móviles */
+        min-height: 80vh; 
     }
 
     .logo-container {
-        margin-left: 15px; /* Reduce márgenes en móviles */
+        margin-left: 15px; 
         margin-top: 20px;
-        align-items: center; /* Centra el logo en móviles */
+        align-items: center; 
     }
 
     .nav-links {
         flex-direction: column;
         align-items: center;
         gap: 10px;
-        margin-top: 0; /* Evita margen negativo */
+        margin-top: 0; 
     }
 
     .nav-links a {
-        font-size: 1em; /* Ajusta el tamaño de la fuente */
+        font-size: 1em; 
     }
 
     .hero-text {
-        padding-bottom: 60px; /* Ajusta el padding */
+        padding-bottom: 60px; 
     }
 
     .hero-text p {
-        font-size: 1.8rem; /* Reduce tamaño del texto en móviles */
+        font-size: 1.8rem; 
     }
 
-    .btn {
-        padding: 10px 30px; /* Ajusta el tamaño de los botones */
-    }
-
-    .btn-secondary {
-        padding: 10px 30px; /* Ajusta el tamaño de los botones */
+    .btn, .btn-secondary {
+        padding: 10px 30px;
+        flex-direction: column;
     }
 
     .button__auth-button {
         width: auto;
-        padding: 10px 20px; /* Ajusta el padding */
+        padding: 10px 20px; 
     }
 }
-
