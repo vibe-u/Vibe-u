@@ -5,19 +5,16 @@
     text-align: center;
     min-height: 100vh;
 }
-
 .dashboard-header h2 {
     font-size: 2.5em;
     color: #4a4e69;
     margin-bottom: 10px;
 }
-
 .dashboard-header p {
     font-size: 1.1em;
     color: #6a6a6a;
     margin-bottom: 50px;
 }
-
 .dashboard-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -25,7 +22,6 @@
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .dashboard-card {
     background-color: white;
     padding: 30px;
@@ -36,24 +32,20 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
 .dashboard-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
-
 .card-title {
     font-size: 1.6em;
     color: #7663e0;
     margin-bottom: 15px;
 }
-
 .dashboard-card p {
     color: #6a6a6a;
     font-size: 1em;
     line-height: 1.6;
 }
-
 .dashboard-btn {
     background-color: #7663e0;
     color: white;
@@ -66,17 +58,13 @@
     transition: all 0.3s ease;
     margin-top: 25px;
 }
-
 .dashboard-btn:hover {
     background-color: #5d49c8;
     transform: scale(1.05);
 }
-
-/* Colores específicos para las tarjetas */
 .events-card { border-left: 5px solid #ff7f50; }
 .groups-card { border-left: 5px solid #48c9b0; }
 .matches-card { border-left: 5px solid #e74c3c; }
-
 @media (max-width: 768px) {
     .dashboard-header h2 {
         font-size: 2em;

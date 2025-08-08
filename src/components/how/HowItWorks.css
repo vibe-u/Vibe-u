@@ -6,7 +6,6 @@
     margin: 30px 0 20px 0;
     padding: 15px;
 }
-
 .steps {
     display: flex;
     flex-direction: row;
@@ -17,7 +16,6 @@
     gap: 80px;
     background-color: #2b0036;
 }
-
 .step-box {
     background-color: #1c002a;
     padding: 20px;
@@ -26,33 +24,27 @@
     width: 220px;
     transition: transform 0.2s ease;
 }
-
 .step-box:hover {
     transform: scale(1.05);
 }
-
 .step-box img {
     width: 60px;
     height: 60px;
     margin-bottom: 10px;
 }
-
 .step-box h3 {
     margin: 0;
     font-size: 1.1rem;
 }
-
 .step-box span {
     font-weight: 300;
     font-size: 0.95rem;
 }
-
 @media (max-width: 768px) {
     .steps {
         flex-direction: column;
         gap: 20px;
     }
-
     .step-box {
         width: 100%;
     }

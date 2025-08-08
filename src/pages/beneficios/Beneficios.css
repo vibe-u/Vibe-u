@@ -1,11 +1,9 @@
-/* Estilos de la sección de beneficios */
 .beneficios-section {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f9fa;
     padding: 40px 20px;
     text-align: center;
 }
-
 .beneficios-title {
     font-size: 2.8em;
     color: #4a4e69;
@@ -16,7 +14,6 @@
     color: black;
     margin-bottom: 50px;
 }
-
 .beneficios-container {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +22,6 @@
     max-width: 1200px;
     margin: 40px auto 0 auto;
 }
-
 .beneficio-card {
     background-color: white;
     border-radius: 15px;
@@ -39,12 +35,10 @@
     flex-direction: column;
     justify-content: center;
 }
-
 .beneficio-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
-
 .beneficio-card h4 {
     font-size: 1.5em;
     color: #7663e0;
@@ -53,23 +47,18 @@
     align-items: center;
     gap: 10px;
 }
-
 .beneficio-card h4 span {
     font-size: 1.5em;
 }
-
 .beneficio-card p {
     color: #6a6a6a;
     font-size: 1em;
     line-height: 1.6;
 }
-/* Contenedor del botón para centrarlo */
 .join-btn-container {
     margin-top: 50px;
     text-align: center;
 }
-
-/* Estilo del botón "Unirse Ahora" */
 .join-now-btn {
     background-color: #7663e0;
     color: white;
@@ -82,24 +71,19 @@
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(118, 99, 224, 0.4);
 }
-
 .join-now-btn:hover {
     background-color: #5d49c8;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 20px rgba(93, 73, 200, 0.5);
 }
-
-/* Responsividad para móviles */
 @media (max-width: 768px) {
     .beneficios-title {
         font-size: 2em;
     }
-
     .beneficio-card {
         padding: 25px;
         min-width: 100%;
     }
-
     .beneficio-card h4 {
         font-size: 1.2em;
     }

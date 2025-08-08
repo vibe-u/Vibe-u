@@ -1,19 +1,15 @@
-/* General section styling */
+/* General */
 .download-cta-section {
     background: linear-gradient(90deg, #6C0063, #D6006D);
     color: #ffffff;
     text-align: center;
     overflow: hidden;
 }
-
-/* Title styling */
 .download-cta-section .section-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
-
-/* Description */
 .download-cta-section p {
     font-size: 1.2rem;
     margin-bottom: 40px;
@@ -21,19 +17,13 @@
     margin-left: auto;
     margin-right: auto;
 }
-
-/* Button container */
 .app-buttons-cta {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     padding: 14px 18px;
-    
-
 }
-
-/* App store buttons */
 .container {
     align-items: center;
     justify-content: center;
@@ -43,9 +33,6 @@
     text-decoration: none;
     min-width: 80px;
 }
-
-
-/* Images inside buttons */
 .btn img {
     height: auto;
     width: 100%;
@@ -55,12 +42,6 @@
     border-radius: 2px;
     display: flex;
 }
-
-
-
-.btn.btn-googleplay {
-    background-color: #000000;
-}
-.btn.btn-appstore {
+.btn.btn-googleplay, .btn.btn-appstore {
     background-color: #000000;
 }

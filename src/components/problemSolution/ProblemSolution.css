@@ -5,7 +5,6 @@
     gap: 2rem;
     padding: 2rem 2.5rem;    
 }
-
 .problema, .solucion {
     flex: 1 1 300px;
     background-color: #fcf9fa;
@@ -17,7 +16,6 @@
     font-size: 1.1rem;
     display: grid;    
 }
-
 .problema h3, .solucion h3 {
     color: #6C0063;
     font-size: 1.8rem;

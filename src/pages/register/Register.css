@@ -8,7 +8,7 @@
     background-color: #0d0d2b; /* Un fondo oscuro para que las estrellas resalten */
     padding: 20px;
     position: relative;
-    overflow: hidden; /* Oculta las estrellas que se salgan del contenedor */
+    overflow: hidden; 
 }
 
 /* Animación de Estrellas */
@@ -24,8 +24,6 @@
     animation: moveStars 60s linear infinite;
     z-index: 0;
 }
-
-/* Tarjeta del formulario */
 .register-card {
     background-color: rgba(255, 255, 255, 0.9); /* Un fondo semitransparente */
     padding: 40px;
@@ -38,32 +36,25 @@
     position: relative; /* Asegura que la tarjeta esté sobre las estrellas */
     z-index: 1; 
 }
-
-/* Título y subtítulo */
 .register-title {
     font-size: 2.2em;
     color: #4a4e69;
     margin-bottom: 10px;
 }
-
 .register-subtitle {
     font-size: 1em;
     color: #6a6a6a;
     margin-bottom: 30px;
 }
-
-/* Estilos del formulario */
 .register-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .input-group {
     position: relative;
     text-align: left;
 }
-
 .input-group input {
     width: 100%;
     padding: 15px;
@@ -72,14 +63,11 @@
     font-size: 1em;
     transition: all 0.3s ease;
 }
-
 .input-group input:focus {
     border-color: #7663e0;
     box-shadow: 0 0 8px rgba(118, 99, 224, 0.3);
     outline: none;
 }
-
-/* Estilo del botón */
 .register-btn {
     padding: 15px;
     background-color: #7663e0;
@@ -92,14 +80,11 @@
     transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(118, 99, 224, 0.4);
 }
-
 .register-btn:hover {
     background-color: #5d49c8;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(93, 73, 200, 0.5);
 }
-
-/* Estilo del enlace de login */
 .login-link {
     display: block;
     margin-top: 25px;
@@ -108,13 +93,10 @@
     font-size: 0.95em;
     transition: color 0.3s ease;
 }
-
 .login-link:hover {
     color: #5d49c8;
     text-decoration: underline;
 }
-
-/* Mensajes de error */
 .error-text {
     color: #e74c3c;
     font-size: 0.85em;
@@ -122,8 +104,6 @@
     display: block;
     text-align: left;
 }
-
-/* Animaciones */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -134,7 +114,6 @@
         transform: scale(1) translateY(0);
     }
 }
-
 @keyframes moveStars {
     from {
         background-position: 0 0;
